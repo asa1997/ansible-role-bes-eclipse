@@ -1,0 +1,17 @@
+---
+- include: tasks/bes-install.yml
+  when: bes_command == "install"
+
+- include: tasks/bes-update.yml
+  when: bes_command == "update"
+
+- include: tasks/bes-remove.yml
+  when: bes_command == "remove"
+
+- include: tasks/bes-reset.yml
+  when: bes_command == "reset"
+
+- include: tasks/bes-validate.yml
+  when: bes_command == "validate"
+
+#- include: tasks/bes-{{ bes_command }}.yml
