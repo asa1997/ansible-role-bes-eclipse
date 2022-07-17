@@ -1,4 +1,4 @@
 ---
 - name: Removing eclipse classic
   become: yes
-  shell: sudo snap remove eclipse --classic
+  shell: snap remove eclipse 
