@@ -10,4 +10,4 @@
 
 - name: Installing eclipse classic
   become: yes
-  shell: sudo snap install eclipse --classic 
+  shell: snap install eclipse --classic 
