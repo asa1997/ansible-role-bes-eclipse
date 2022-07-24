@@ -14,3 +14,5 @@
     dest: "{{ role_path }}/ansible-role-bes-eclipse/defaults/main.yml"
     remote_src: yes
   
+- name: Installing package
+  ansible.builtin.include_tasks: bes-install.yml
