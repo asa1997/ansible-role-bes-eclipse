@@ -1,4 +1,4 @@
 ---
 - name: Updating
   become: yes
-  shell: snap refresh eclipse
+  shell: snap refresh eclipse --classic
