@@ -2,7 +2,7 @@
 - name: Validate Installation
   command: which eclipse
   register: package_check
-  failed_when: package_check.rc == 0
+  failed_when: package_check.rc == 1
 
 
   
