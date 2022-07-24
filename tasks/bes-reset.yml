@@ -1,2 +1,16 @@
 ---
-# TODO
+- name: Removing package
+  ansible.builtin.include_tasks: bes-remove.yml
+  
+- name: Getting default conf.
+  ansible.builtin.git:
+    repo: 'https://github.com/asa1997/ansible-role-bes-eclipse.git'
+    dest: '{{ vagrant_home }}'
+    clone: yes
+
+- name: Resetting default conf.
+  ansible.builtin.copy:
+    src: "{{ vagrant_home }}/ansible-role-bes-eclipse/defaults/main.yml"
+    dest: "{{ role_path }}/ansible-role-bes-eclipse/defaults/main.yml"
+    remote_src: yes
+  
