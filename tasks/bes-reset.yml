@@ -1,18 +1,18 @@
 ---
 - name: Removing package
-  ansible.builtin.include_tasks: bes-remove.yml
+  ansible.builtin.include_tasks: oah-remove.yml
   
 - name: Getting default conf.
   ansible.builtin.git:
-    repo: 'https://github.com/asa1997/ansible-role-bes-eclipse.git'
+    repo: 'https://github.com/asa1997/ansible-role-oah-eclipse.git'
     dest: '{{ vagrant_home }}'
     clone: yes
 
 - name: Resetting default conf.
   ansible.builtin.copy:
-    src: "{{ vagrant_home }}/ansible-role-bes-eclipse/defaults/main.yml"
-    dest: "{{ role_path }}/ansible-role-bes-eclipse/defaults/main.yml"
+    src: "{{ vagrant_home }}/ansible-role-oah-eclipse/defaults/main.yml"
+    dest: "{{ role_path }}/ansible-role-oah-eclipse/defaults/main.yml"
     remote_src: yes
   
 - name: Installing package
-  ansible.builtin.include_tasks: bes-install.yml
+  ansible.builtin.include_tasks: oah-install.yml

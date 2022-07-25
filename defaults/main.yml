@@ -1,4 +1,4 @@
 ---
-# defaults file for ansible-role-bes-eclipse
+# defaults file for ansible-role-oah-eclipse
 eclipse_req_packages: snapd
 vagrant_home: /home/vagrant
