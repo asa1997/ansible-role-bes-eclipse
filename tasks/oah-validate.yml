@@ -2,7 +2,9 @@
 - name: Validate Installation
   command: which eclipse
   register: package_check
-  failed_when: package_check.rc == 1
-
-
   
+- name: Message
+  debug: 
+    msg: "Package found"
+  when: package_check is succeeded
+  failed_when: package_check.rc == 1
