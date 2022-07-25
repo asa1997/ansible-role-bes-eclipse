@@ -5,14 +5,19 @@
 - name: Getting default conf.
   ansible.builtin.git:
     repo: 'https://github.com/asa1997/ansible-role-oah-eclipse.git'
-    dest: '{{ vagrant_home }}'
+    dest: '{{ vagrant_home }}/ansible-role-oah-eclipse'
     clone: yes
 
 - name: Resetting default conf.
   ansible.builtin.copy:
     src: "{{ vagrant_home }}/ansible-role-oah-eclipse/defaults/main.yml"
-    dest: "{{ role_path }}/ansible-role-oah-eclipse/defaults/main.yml"
+    dest: "{{ role_path }}/defaults/main.yml"
     remote_src: yes
+
+- name: Cleaning up
+  file:
+    path: "{{ vagrant_home }}/ansible-role-oah-eclipse"
+    state: absent
   
 - name: Installing package
   ansible.builtin.include_tasks: oah-install.yml
