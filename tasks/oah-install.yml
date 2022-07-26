@@ -11,3 +11,6 @@
 - name: Installing eclipse classic
   become: yes
   shell: snap install eclipse --classic 
+
+- include: tasks/pin_to_favourites.yml
+  when: eclipse_pin_fav | bool
