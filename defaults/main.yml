@@ -2,4 +2,4 @@
 # defaults file for ansible-role-oah-eclipse
 eclipse_req_packages: snapd
 vagrant_home: /home/vagrant
-eclipse_set_fav: true
+eclipse_pin_fav: true
