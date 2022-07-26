@@ -1,0 +1,3 @@
+---
+- name: Pinning eclipse to favourites
+  shell: gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'eclipse_eclipse.desktop']"
