@@ -6,19 +6,19 @@
   become: yes
   ansible.builtin.git:
     repo: 'https://github.com/asa1997/ansible-role-oah-eclipse.git'
-    dest: '{{ vagrant_home }}/ansible-role-oah-eclipse'
+    dest: '{{ eclipse_tmp }}'
     clone: yes
 
 - name: Resetting default conf.
   ansible.builtin.copy:
-    src: "{{ vagrant_home }}/ansible-role-oah-eclipse/defaults/main.yml"
+    src: "{{ eclipse_tmp }}/defaults/main.yml"
     dest: "{{ role_path }}/defaults/main.yml"
     remote_src: yes
 
 - name: Cleaning up
   become: yes
   file:
-    path: "{{ vagrant_home }}/ansible-role-oah-eclipse"
+    path: '{{ eclipse_tmp }}'
     state: absent
   
 - name: Installing package
